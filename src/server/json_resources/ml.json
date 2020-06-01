@@ -1,0 +1,32 @@
+{
+    "data": [
+        {
+            "words": {
+				"appHeaderlb":"FIFA Order Management",
+				"ordersDashboardWelcomelb":"Welcome to Orders Dashboard",
+				"homelb":"Dashboards",
+                "customersOptlb": "Customers",
+                "ordersOptlb": "Orders",
+                "tasksOptlb": "Tasks",
+				"customersDashboardlb": "Customers Dashboard",
+                "ordersDashboardlb": "Orders Dashboard",
+                "tasksDashboardlb": "Tasks Dashboard"
+            },
+            "lenaguaje": "en"
+        },
+        {
+            "words": {
+                "appHeaderlb":"Gestion des commandes FIFA",
+                "ordersDashboardWelcomelb":"Bienvenue dans le tableau de bord des commandes",
+				"homelb": "Tableaux de bord",
+				"customersOptlb": "Clients",
+                "ordersOptlb": "Commandes",
+                "tasksOptlb": "T�ches",
+                "customersDashboardlb": "Tableau de bord clients",
+                "ordersDashboardlb": "Tableau de bord des commandes",
+                "tasksDashboardlb": "Tableau de bord des t�ches"
+            },
+            "lenaguaje": "fr"
+        }
+    ]
+}
