@@ -6,7 +6,7 @@ export default (stateId, reducer) => {
     action
   ) => {
     const newState = reducer(state, action);    
-  //  localStorage.setItem(stateId, JSON.stringify(newState));    
+    localStorage.setItem(stateId, JSON.stringify(newState));    
     return newState;
   };
 };

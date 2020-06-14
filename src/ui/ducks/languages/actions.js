@@ -13,12 +13,10 @@ export default {
         .get({})
     };
   }  ,
-  setLanguage: ({language,cacheable}) => {
-    const c = cacheable||false;
+  setLanguage: ({language}) => {    
     return {
       type: types.SET_LANGUAGE,
-      language:language,
-      cacheable:c
+      language:language      
     };
   }  
 }

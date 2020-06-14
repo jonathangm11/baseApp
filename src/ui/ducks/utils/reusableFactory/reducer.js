@@ -14,7 +14,7 @@ export default (stateId, reducer) => (state = reducer(), action) => {
     actionStateId = action.stateId;
     reducerActionType = action.type;
   }
-console.log("reducer",action,actionStateId)
+
   if (actionStateId !== stateId) {
     return state;
   }

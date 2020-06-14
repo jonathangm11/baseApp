@@ -6,6 +6,6 @@ import withLocalStorage from './withLocalStorage';
 export default (reducers) => combineReducers(
   _.mapValues(
     reducers,
-    (value, key) => withLocalStorage(key, reducerFactory(key, value))
+    (value, key) => value.cache ? withLocalStorage(key, reducerFactory(key, value.reducer)) : reducerFactory(key, value.reducer)
   )
 );

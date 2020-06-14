@@ -7,13 +7,13 @@ import {
   } from "./utils/reusableFactory";
 
   export const actions = combineActions({
-    languages: languages.actions   
+    languages: languages.actions
   })
   export const selectors = combineSelectors({
     languages: languages.selectors
   })
   const appReducer = combineReducers({
-    languages: languages.reducer
+    languages: {reducer:languages.reducer, cache: true}
   })
   export const rootReducer = (state, action) => {
     if (action.type === "userPreferences:USERPREF_APPLICATION_CACHE_RESET") {
