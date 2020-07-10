@@ -23,7 +23,7 @@
     "reselect": "^4.0.0"
   },
   "scripts": {
-    "start":"concurrently \"npm run server\" \"npm run ui",
+    "start": "concurrently \"npm run server\" \"npm run ui",
     "ui": "react-scripts start",
     "server": "node ./src/server/server.js",
     "build": "react-scripts build",
