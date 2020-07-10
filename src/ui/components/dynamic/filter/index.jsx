@@ -244,9 +244,9 @@ export default class Filter extends Component<*, State> {
                 SelectContainer: this.SelectContainerComponent
               }} />
               </span>
-               <GreenButton variant="contained" color="primary" onClick={(e)=>this.handleSaveFilter(e)}>
+               <PurpleButton variant="contained" color="primary" onClick={(e)=>this.handleSaveFilter(e)}>
                 <StarBorderIcon style={{ fill: 'white' }} />
-              </GreenButton>
+              </PurpleButton>
           </ExpansionPanelSummary>
 
           <ExpansionPanelDetails>
