@@ -20,7 +20,8 @@
     "react-scripts": "3.4.1",
     "react-select": "^3.0.4",
     "redux": "^4.0.5",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "use-async-setstate": "^0.1.1"
   },
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run ui",

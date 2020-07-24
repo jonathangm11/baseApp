@@ -1,4 +1,5 @@
 import languages from "./languages";
+import orders from './orders';
 
 import {
     combineActions,
@@ -7,13 +8,16 @@ import {
   } from "./utils/reusableFactory";
 
   export const actions = combineActions({
-    languages: languages.actions
+    languages: languages.actions,
+    orders: orders.actions,
   })
   export const selectors = combineSelectors({
-    languages: languages.selectors
+    languages: languages.selectors,
+    orders: orders.selectors
   })
   const appReducer = combineReducers({
-    languages: {reducer:languages.reducer, cache: true}
+    languages: {reducer:languages.reducer, cache: true},
+    orders: {reducer:orders.reducer},
   })
   export const rootReducer = (state, action) => {
     if (action.type === "userPreferences:USERPREF_APPLICATION_CACHE_RESET") {

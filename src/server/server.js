@@ -15,7 +15,7 @@ server.use((req, res, next) => {
 
 server.use(express.static(root));
 
-const PORT = process.env.PORT || 8080;
+const PORT = 3000;
 
 server.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);  
