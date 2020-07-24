@@ -29,20 +29,26 @@ export default class Filter extends Component<*, State> {
 
   getSelectedOptions = (data) => {
     const {setFilterBarData} = this.props; 
+
     if (Array.isArray(data)) {
-      this.setState(
-        (prevState) => ({
-          selectedOptions: prevState.selectedOptions.concat(data),
-        }),
-        () => {
-          this.setState({
-            ifSaveFilter: false,
-          });
-          setFilterBarData(this.state.selectedOptions);
-          this.calculateTypeIndex();
+          this.setState(
+            (prevState) => ({
+              selectedOptions: prevState.selectedOptions.concat(data),
+            }),
+            () => {
+              var uniq = this.state.selectedOptions.reduce(function(a,b){
+                if (a.indexOf(b) < 0 ) a.push(b);
+                return a;
+              },[]);
+              this.setState({
+                ifSaveFilter: false,
+                selectedOptions: uniq,
+              });
+              setFilterBarData(uniq);
+              this.calculateTypeIndex();
+            }
+          );
         }
-      );
-    }
   };
 
   calculateTypeIndex = () => {
@@ -83,6 +89,7 @@ export default class Filter extends Component<*, State> {
   };
 
   handleSaveButton = () => {
+    // const {clearAllFilterBarData} = this.props;
     if (!this.state.ifSaveFilter)
       this.setState({
         ifSaveFilter: true,
@@ -213,7 +220,7 @@ export default class Filter extends Component<*, State> {
 
   render() {
     const { options, fullOptions, searchDropdownData, filterBarData } = this.props;
-    console.log("test5",searchDropdownData,filterBarData);
+
     const filterStyle = {
       control: (styles) => ({
         ...styles,

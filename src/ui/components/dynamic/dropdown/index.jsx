@@ -8,13 +8,19 @@ import { useDispatch } from "react-redux";
 import Typography from "@material-ui/core/Typography";
 
 const ExpandableDropdown = (props) => {
-  const { ifSave, ifClear, setData, options, defaultVal, type,key } = props;
+  const { ifSave, ifClear, setData, options, defaultVal, type, key } = props;
 
   const filterBarData = useSelector((state) =>
     selectors.orders.getFilterBarData(state)
   );
 
-  const prevProps = useRef({ ifSave, ifClear, setData, filterBarData }).current;
+  const dropdownData = useSelector((state) =>
+    selectors.orders.getDropdownData(state)
+  );
+
+  console.log("test2,",type,defaultVal);
+
+  const prevProps = useRef({ ifSave, ifClear, setData, filterBarData, defaultVal}).current;
 
   const dispatch = useDispatch();
 
@@ -24,6 +30,8 @@ const ExpandableDropdown = (props) => {
     ifMultiValue: false,
     searchType: { label: "Contains", value: "contains" },
   });
+
+  console.log("testtype",type,state.value);
 
 
   useEffect(() => {
@@ -52,8 +60,7 @@ const ExpandableDropdown = (props) => {
   useEffect( () => {
       if (!prevProps.ifSave && ifSave ){
         setData(state.value);
-        console.log("testfilterbardata",filterBarData);
-        let temp = state.value.filter(option1 => !filterBarData.find((option2)=>option1.value === option2.value) )
+        let temp = state.value.filter(option1 => !dropdownData.find((option2)=>option1.value === option2.value) )
         dispatch(actions.orders.setSearchDropdownData(temp));
       }
       return () => {
@@ -88,6 +95,15 @@ const ExpandableDropdown = (props) => {
       })
     }
   },[state.value])
+
+  useEffect(() => {
+    if(prevProps.defaultVal !== defaultVal){
+      setState({
+        ...state,
+        value: defaultVal,
+      })
+    }
+  },[defaultVal])
 
 
 

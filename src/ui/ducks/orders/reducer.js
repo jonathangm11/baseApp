@@ -7,7 +7,6 @@ export default (state = INIT_STATE, action={}) => {
   switch (action.type) {
     
     case "SET_SEARCH_DROPDOWN_DATA": {
-      console.log("testset",action.payload);
       return {
         ...state,
         dropdownData: state.dropdownData.concat(action.payload)

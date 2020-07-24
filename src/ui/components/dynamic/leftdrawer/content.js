@@ -36,7 +36,7 @@ const DrawerContent = (props) => {
       setState({
         ifSaveFilter: true,
       });
-      dispatch(actions.orders.clearAllSearchFilterBarData());
+      // dispatch(actions.orders.clearAllSearchFilterBarData());
       closeDrawer(e);
   };
 
