@@ -18,8 +18,6 @@ const ExpandableDropdown = (props) => {
     selectors.orders.getDropdownData(state)
   );
 
-  console.log("test2,",type,defaultVal);
-
   const prevProps = useRef({ ifSave, ifClear, setData, filterBarData, defaultVal}).current;
 
   const dispatch = useDispatch();
@@ -30,8 +28,6 @@ const ExpandableDropdown = (props) => {
     ifMultiValue: false,
     searchType: { label: "Contains", value: "contains" },
   });
-
-  console.log("testtype",type,state.value);
 
 
   useEffect(() => {

@@ -12,7 +12,7 @@ const mapDispatchToProps = dispatch => ({
   setFilterBarData: (data) => dispatch(actions.orders.setSearchFilterBarData(data)),
   clearFilterBarData: (type) => dispatch(actions.orders.clearSearchFilterBarData(type)),
   clearAllFilterBarData: () => dispatch(actions.orders.clearAllSearchFilterBarData()),
-  clearDropdownData: (type) => dispatch(actions.orders.clearDropdownData(type)),
+  clearDropdownData: (type) => dispatch(actions.orders.clearSearchDropdownData(type)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(view);

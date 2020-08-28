@@ -64,7 +64,6 @@ const Filter = (props) => {
           selectedOptions: prevState.selectedOptions.concat(data),
         }),
         () => {
-          console.log("test",state);
           
         }
       );

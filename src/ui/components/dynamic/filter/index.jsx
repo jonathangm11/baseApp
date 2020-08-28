@@ -246,8 +246,8 @@ export default class Filter extends Component<*, State> {
           color: "#6979F8",
         };
       },
-    };
-
+    };  
+    
     return (
       <Box>
         <LeftDrawer
